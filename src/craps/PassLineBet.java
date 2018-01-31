@@ -14,20 +14,14 @@ public class PassLineBet {
 	}
 	
 	private boolean firstWin(int rollNumber) {
-		switch(rollNumber) {
-		case 7:
-		case 11: return true;
-		default: return false;
-		}
+		if(rollNumber == 7 && rollNumber == 11) return true;
+		return false;
 	}
 	
 	private boolean firstLoss(int rollNumber) {
-		switch(rollNumber) {
-		case 2:
-		case 3:
-		case 12: return true;
-		default: return false;
-		}
+		if((rollNumber == 2) || (rollNumber == 3) || (rollNumber == 12))
+			return true;
+		return false;
 	}
 
 	private boolean crapsRolls(int thePoint) {
@@ -42,13 +36,8 @@ public class PassLineBet {
 	}
 	
 
-/*
- * private boolean crapsRolls(
- */
-	
 	public boolean craps() {
 		int firstRoll = diceRoll(2, 6);
-		//return (firstWin(firstRoll) || crapsRolls(firstRoll)) ? true : false;
 		System.out.println(firstRoll);
 		if(firstWin(firstRoll)) {
 			return true;
@@ -60,9 +49,4 @@ public class PassLineBet {
 		return false;
 	}
 	
-//	public String toString(PassLineBet newPassLineBet) {
-//		return (String) newPassLineBet;
-//		
-//	}
-
 }
