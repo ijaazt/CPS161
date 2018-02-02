@@ -22,12 +22,12 @@ public class Temperature {
 	}
 	
 	public double getCelcius() {
-		if (this.scale == 'F') return 5 * (this.temperature - 32) /9;
+		if (this.scale == 'F') return (this.temperature - 32) * 5/9;
 		return this.temperature;
 	}
 	
 	public double getFahrenheit() {
-		if (this.scale == 'c') return (9*this.temperature/5);
+		if (this.scale == 'C') return (this.temperature * 9/5 + 32);
 		return this.temperature;
 	}
 	
